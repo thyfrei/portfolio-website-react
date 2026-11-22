@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+div .card {
+  /* width: 100%; */
+  /* max-width: 420px; */
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.643);
+
+  background-color: rgba(51, 50, 50, 0.498);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+div .card-subtitle{
+    color: rgb(207, 208, 209);
+}
+
+div .card-title{
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+div .card-link{
+    display: flex;
+    justify-content: flex-start;
+    /* align-items: center; */
+    gap: 20px;
+}

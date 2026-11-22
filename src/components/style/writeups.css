@@ -1,0 +1,141 @@
+.writeups-main {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 24px;
+    box-sizing: border-box;
+}
+
+.writeups-list {
+    width: 100%;
+    max-width: 1100px; /* wider cards */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.writeup-card {
+    width: 100%;
+    background: #111111;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
+}
+
+.writeup-card:hover {
+    border-color: #444444;
+}
+
+/* Reduced padding = shorter card */
+.writeup-card-header {
+    width: 100%;
+    padding: 22px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.writeup-card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.writeup-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777;
+    font-weight: 600;
+}
+
+.writeup-card-header h2 {
+    font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+    line-height: 1.35;
+    color: #eee;
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.writeup-description {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+
+    /* Keep preview compact */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.writeup-toggle {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #353535;
+    border-radius: 50%;
+    color: #ccc;
+    font-size: 22px;
+    transition: background 0.25s ease;
+}
+
+.writeup-card-header:hover .writeup-toggle {
+    background: #222;
+}
+
+/* Expanded article */
+.writeup-content {
+    border-top: 1px solid #292929;
+    padding: 26px;
+    animation: writeupReveal 0.25s ease;
+}
+
+@keyframes writeupReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .writeups-main {
+        padding: 20px 14px;
+    }
+
+    .writeup-card-header {
+        padding: 18px;
+    }
+
+    .writeup-card-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .writeup-description {
+        font-size: 13px;
+    }
+
+    .writeup-content {
+        padding: 18px;
+    }
+}

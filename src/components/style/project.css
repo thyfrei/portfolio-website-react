@@ -1,0 +1,191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+.project-main {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    color: rgb(234, 253, 251);
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+
+    box-sizing: border-box;
+    padding: 2rem 0;
+}
+
+/* Project grid */
+
+.project-list {
+    width: 60%;
+    margin: 2vh 0 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(260px, 1fr)
+    );
+
+    gap: 1.25rem;
+    box-sizing: border-box;
+}
+
+/* Loading / error / empty status */
+
+.repo-status {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 20px;
+}
+
+.repo-status a {
+    color: hsl(240, 100%, 94%);
+    text-decoration: none;
+}
+
+.repo-status a:hover {
+    color: rgb(158, 167, 160);
+    text-decoration: underline;
+}
+
+/* Repository card */
+
+.repo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    padding: 1.5rem;
+    box-sizing: border-box;
+
+    text-align: left;
+
+    border: 2px solid rgb(171, 170, 170);
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.repo-card:hover {
+    transform: translateY(-3px);
+    border-color: rgb(226, 212, 248);
+}
+
+/* Repository title */
+
+.repo-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.repo-title a {
+    color: hsl(240, 100%, 94%);
+    text-decoration: none;
+}
+
+.repo-title a:hover {
+    color: rgb(158, 167, 160);
+    text-decoration: underline;
+}
+
+/* Description */
+
+.repo-desc {
+    flex-grow: 1;
+
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+/* Metadata */
+
+.repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.4rem 1rem;
+
+    font-size: 14px;
+    color: rgb(183, 192, 209);
+}
+
+/* Topics */
+
+.repo-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.repo-topic {
+    padding: 2px 10px;
+
+    font-size: 14px;
+
+    border: 2px solid rgb(183, 192, 209);
+    border-radius: 5px;
+}
+
+/* Live site link */
+
+.repo-live a {
+    display: inline-block;
+
+    padding: 4px 12px;
+
+    font-size: 15px;
+
+    color: hsl(240, 100%, 94%);
+    text-decoration: none;
+
+    border: 2px solid rgb(183, 192, 209);
+    border-radius: 5px;
+
+    transition: all 0.2s ease;
+}
+
+.repo-live a:hover {
+    background: rgba(226, 212, 248, 0.15);
+    color: white;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 900px) {
+    .project-list {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-main {
+        padding: 1rem 0;
+    }
+
+    .project-list {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .repo-card,
+    .repo-live a {
+        transition: none;
+    }
+
+    .repo-card:hover {
+        transform: none;
+    }
+}
