@@ -1,12 +1,13 @@
 import React from 'react'
+import './style/archive.css'
 
 export default function archive() {
   return (
-    <div>
-      <section style={{ minHeight: "80vh", color: "white", padding: "40px" }}>
-      <h1>Archive</h1>
-      <p>This page is rendering successfully.</p>
-      </section>
-    </div>
+    <main className="writeups-main">
+            <div className="gifContainer">
+                <img src="/working.gif" alt="Learning animation" />
+                <h4>Currently Working...</h4>
+            </div>
+    </main>
   )
 }

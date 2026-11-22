@@ -1,0 +1,28 @@
+.writeups-main {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gifContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.gifContainer img {
+    width: 250px;
+    max-width: 80%;
+    height: auto;
+}
+
+.gifContainer h4 {
+    color: #bdbdbd;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+}
