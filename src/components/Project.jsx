@@ -13,77 +13,77 @@ export default function Project() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // Read cached repositories
-  function readCache() {
-    try {
-      const raw = sessionStorage.getItem(CACHE_KEY);
-
-      if (!raw) return null;
-
-      const { time, data } = JSON.parse(raw);
-
-      return Date.now() - time < CACHE_MS ? data : null;
-    } catch {
-      return null;
-    }
-  }
-
-  // Save repositories in sessionStorage
-  function writeCache(data) {
-    try {
-      sessionStorage.setItem(
-        CACHE_KEY,
-        JSON.stringify({
-          time: Date.now(),
-          data,
-        })
-      );
-    } catch {
-      // Page will still work without cache
-    }
-  }
-
-  // Fetch GitHub repositories
-  async function getRepos() {
-    const cached = readCache();
-
-    if (cached) return cached;
-
-    const response = await fetch(
-      `https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=100`,
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`GitHub API responded with ${response.status}`);
-    }
-
-    const raw = await response.json();
-
-    const data = raw.map((repo) => ({
-      name: repo.name,
-      url: repo.html_url,
-      description: repo.description,
-      language: repo.language,
-      stars: repo.stargazers_count,
-      updated: repo.pushed_at || repo.updated_at,
-      topics: repo.topics || [],
-      homepage: repo.homepage,
-      fork: repo.fork,
-      archived: repo.archived,
-    }));
-
-    writeCache(data);
-
-    return data;
-  }
-
-  // Fetch data when component mounts
   useEffect(() => {
+    // Read cached repositories
+    function readCache() {
+      try {
+        const raw = sessionStorage.getItem(CACHE_KEY);
+
+        if (!raw) return null;
+
+        const { time, data } = JSON.parse(raw);
+
+        return Date.now() - time < CACHE_MS ? data : null;
+      } catch {
+        return null;
+      }
+    }
+
+    // Save repositories in sessionStorage
+    function writeCache(data) {
+      try {
+        sessionStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify({
+            time: Date.now(),
+            data,
+          })
+        );
+      } catch {
+        // Page will still work without cache
+      }
+    }
+
+    // Fetch GitHub repositories
+    async function getRepos() {
+      const cached = readCache();
+
+      if (cached) return cached;
+
+      const response = await fetch(
+        `https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=100`,
+        {
+          headers: {
+            Accept: "application/vnd.github+json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`GitHub API responded with ${response.status}`);
+      }
+
+      const raw = await response.json();
+
+      const data = raw.map((repo) => ({
+        name: repo.name,
+        url: repo.html_url,
+        description: repo.description,
+        language: repo.language,
+        stars: repo.stargazers_count,
+        updated: repo.pushed_at || repo.updated_at,
+        topics: repo.topics || [],
+        homepage: repo.homepage,
+        fork: repo.fork,
+        archived: repo.archived,
+      }));
+
+      writeCache(data);
+
+      return data;
+    }
+
+    // Fetch data when component mounts
     getRepos()
       .then((data) => {
         const filtered = data.filter(
@@ -181,34 +181,24 @@ export default function Project() {
               </p>
 
               <div className="repo-meta">
-                {repo.language && (
-                  <span>{repo.language}</span>
-                )}
+                {repo.language && <span>{repo.language}</span>}
 
-                {repo.stars > 0 && (
-                  <span>★ {repo.stars}</span>
-                )}
+                {repo.stars > 0 && <span>★ {repo.stars}</span>}
 
                 <span>
                   Updated{" "}
-                  {new Date(repo.updated).toLocaleDateString(
-                    undefined,
-                    {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    }
-                  )}
+                  {new Date(repo.updated).toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
                 </span>
               </div>
 
               {visibleTopics.length > 0 && (
                 <div className="repo-topics">
                   {visibleTopics.map((topic) => (
-                    <span
-                      className="repo-topic"
-                      key={topic}
-                    >
+                    <span className="repo-topic" key={topic}>
                       {topic}
                     </span>
                   ))}
