@@ -28,7 +28,7 @@ export default function Cv() {
                   GitHub
                 </a>
 
-                <a href="https://www.linkedin.com/in/iitm-soumik/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/soumikworks/" target="_blank" rel="noopener noreferrer">
                   LinkedIn
                 </a>
 
