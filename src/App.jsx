@@ -1,4 +1,3 @@
-import logo from './logo.png';
 import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -8,13 +7,13 @@ import Cv from './components/Cv';
 import Footer from './components/Footer';
 import Archive from './components/Archive';
 import { Route, Routes } from 'react-router-dom';
-import { BrowserRouter } from "react-router";
 
 export default function App() {
   return (
     <div className="app-layout">
       <Navbar />
-      <main className='main-content'>
+
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/writeups" element={<Writeups />} />
@@ -23,9 +22,8 @@ export default function App() {
           <Route path="/Archive" element={<Archive />} />
         </Routes>
       </main>
+
       <Footer />
     </div>
-  )
+  );
 }
-
-

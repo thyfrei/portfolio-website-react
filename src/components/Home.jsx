@@ -4,7 +4,7 @@ import bgMain from './style/bg_main.png';
 
 export default function Home() {
   let bodyStyle={
-    backgroundColor: "#1a1a1c",
+    backgroundColor: "#111112",
     backgroundImage: `url(${bgMain})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
