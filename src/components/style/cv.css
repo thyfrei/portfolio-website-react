@@ -5,31 +5,20 @@
   width: 100%;
   min-height: 100vh;
   background: rgb(59, 57, 56);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 /* Main Layout */
 .cv-main {
-  width: 100%;
   min-height: 93vh;
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-
   padding: 2rem 1rem 3rem;
-
-  color: rgb(234, 253, 251);
-  font-family: "Crete Round", serif;
-  font-size: 18px;
 }
 
 /* CV Card */
 .cv-card {
-  width: min(900px, 100%);
+  width: min(1240px, 100%);
   padding: clamp(1.4rem, 4vw, 3.2rem);
 
   border: 1px solid rgba(213, 225, 241, 0.55);

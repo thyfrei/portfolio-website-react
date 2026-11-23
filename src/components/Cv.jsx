@@ -32,7 +32,7 @@ export default function Cv() {
                   LinkedIn
                 </a>
 
-                <a href="https://thyfrei.github.io/Soumik/" target="_blank" rel="noopener noreferrer">
+                <a href="https://soumik.works/" target="_blank" rel="noopener noreferrer">
                   Portfolio
                 </a>
               </div>
@@ -123,9 +123,9 @@ export default function Cv() {
                 <div className="entry-heading">
                   <h3>Personal Portfolio Website</h3>
                   <span>
-                    HTML5, CSS3, JavaScript ·{" "}
+                    HTML5, CSS3, JavaScript, React ·{" "}
                     <a
-                      href="https://github.com/thyfrei/Soumik"
+                      href="https://github.com/thyfrei/soumikpal"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -139,13 +139,18 @@ export default function Cv() {
                     Designed and developed a responsive personal website featuring
                     a portfolio, CV, technical write-ups and blog.
                   </li>
-
                   <li>
-                    Integrated the GitHub REST API to dynamically retrieve and
-                    display public repository information.
+                    Integrated the GitHub REST API to dynamically fetch and display 
+                    public repositories, enabling automated project updates.
+                  </li>
+                  <li>
+                    Implemented a Markdown-based write-ups section for publishing 
+                    technical articles and documenting engineering projects and learnings.
                   </li>
 
-                  <li>Deployed through GitHub Pages.</li>
+                  <li>Configured automated deployment through Vercel with GitHub integration and a 
+                    custom domain (soumik.works), enabling continuous deployment on code pushes.
+                  </li>
                 </ul>
               </div>
             </section>
