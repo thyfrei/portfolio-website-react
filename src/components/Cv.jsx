@@ -125,7 +125,7 @@ export default function Cv() {
                   <span>
                     HTML5, CSS3, JavaScript, React ·{" "}
                     <a
-                      href="https://github.com/thyfrei/soumikpal"
+                      href="https://github.com/thyfrei/portfolio-website-react"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

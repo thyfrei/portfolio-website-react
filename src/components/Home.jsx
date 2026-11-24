@@ -24,7 +24,7 @@ export default function Home() {
               Currently I am learing about foundation Models and Model Training.
             </p>
             <div className="card-link">
-            <a href="https://www.linkedin.com/in/iitm-soumik/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/soumikworks/">LinkedIn</a>
             <a href="https://x.com/InteractSoumik">X</a>
             </div>
           </div>
